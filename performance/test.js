@@ -4,6 +4,14 @@ import { sleep } from 'k6';
 
 const simpleRequestDuration = new Trend('simple_request_duration');
 
+export let options = {
+    duration: "1m",
+    vus: 50,
+    thresholds: {
+        simple_request_duration: ["p(95)<120"]
+    }
+};
+
 export default function(data) {
     
     let response = http.get('https://httpbin.org/get',
