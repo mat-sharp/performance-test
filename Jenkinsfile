@@ -1,9 +1,9 @@
 pipeline {
-    agent { docker { image 'node:6.3' } }
+    agent { docker { image ' loadimpact/k6:latest' } }
     stages {
         stage('build') {
             steps {
-                sh 'npm --version'
+                sh 'k6 run ./performance/test.js'
             }
         }
     }
