@@ -1,11 +1,17 @@
 pipeline {
     agent {
-        docker { image 'node:7-alpine' }
+        
+    
+        
+    docker {
+        image 'loadimpact/k6'
+    }
+}
     }
     stages {
         stage('Test') {
             steps {
-                sh 'node --version'
+                sh 'ls'
             }
         }
     }
