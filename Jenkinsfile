@@ -1,14 +1,6 @@
 pipeline {
-    agent any
+    agent { dockerfile true}
     stages {
-        stage ('Build'){
-            steps {
-                sh 'wget https://bintray.com/loadimpact/rpm/rpm -O bintray-loadimpact-rpm.repo'
-                sh 'yum help'
-                sh 'mv bintray-loadimpact-rpm.repo /etc/yum.repos.d/'
-                sh 'yum install k6'
-            }
-        }
         stage('Test') {
             steps {
                 sh 'ls'
