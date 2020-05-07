@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'cd master'
-                sh 'pwd && ls'
+                sh 'cd performance'
+                sh 'ls -a'
                 sh 'chmod +x setup_k6.sh'
             }
         }
