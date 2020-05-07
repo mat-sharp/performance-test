@@ -1,12 +1,11 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'node:7-alpine' }
+    }
     stages {
-        stage('build') {
+        stage('Test') {
             steps {
-                sh 'ls'
-                sh 'sh setup_k6.sh'
-                
-        
+                sh 'node --version'
             }
         }
     }
