@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'ls'
+                sh 'cd ./performance'
+                sh 'chmod +x setup_k6.sh'
             }
         }
     }
