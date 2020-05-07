@@ -1,10 +1,15 @@
 pipeline {
-    agent { dockerfile true }
+    agent { 
+        docker { 
+            image 'loadimpact/k6',
+            args '--entrypoint=\'\''
+        }
+    }
     
     stages {
         stage('Test') {
             steps {
-                sh 'ls'
+                
             }
         }
     }
