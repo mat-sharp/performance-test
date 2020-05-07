@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'k6 run ./performance/test.js'
+                sh 'docker run k6:latest'
             }
         }
     }
