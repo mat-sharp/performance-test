@@ -1,7 +1,7 @@
 pipeline {
     agent { 
         docker { 
-            image 'loadimpact/k6',
+            image 'loadimpact/k6'
             args '--entrypoint=\'\''
         }
     }
