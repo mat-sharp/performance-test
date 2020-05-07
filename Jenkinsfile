@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                'k6 run test.js'
+                sh 'docker run loadimpact/k6 run <./performance/test.js'
             }
         }
     }
