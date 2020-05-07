@@ -2,14 +2,14 @@ pipeline {
     agent { 
         docker { 
             image 'loadimpact/k6'
-            args '--entrypoint=\'\''
+            
         }
     }
     
     stages {
         stage('Test') {
             steps {
-                
+                'k6 run test.js'
             }
         }
     }
