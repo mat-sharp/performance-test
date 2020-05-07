@@ -1,9 +1,14 @@
 pipeline {
-    agent { dockerfile true }
+    agent {
+        docker {
+            image 'maven:3-alpine'
+            args '-v $HOME/.m2:/root/.m2'
+        }
+    }
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
-                sh 'docker run k6:latest'
+                sh 'mvn -B'
             }
         }
     }
