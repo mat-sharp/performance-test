@@ -3,10 +3,10 @@ pipeline {
         
     
         
-    docker {
-        image 'loadimpact/k6'
-    }
-}
+        docker {
+            image 'loadimpact/k6'
+        }
+
     }
     stages {
         stage('Test') {
