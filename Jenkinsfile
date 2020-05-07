@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image ' loadimpact/k6:latest' } }
+    agent { docker { image 'loadimpact/k6' } }
     stages {
         stage('build') {
             steps {
