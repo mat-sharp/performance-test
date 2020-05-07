@@ -1,11 +1,9 @@
 pipeline {
-    node
+    agent { docker { image 'node:6.3' } }
     stages {
-        stage('Performance Testing') {
+        stage('build') {
             steps {
-                echo 'Running K6 performance tests...'
-                sh 'brew install k6'
-                echo 'Completed Running K6 performance tests!'
+                sh 'npm --version'
             }
         }
     }
