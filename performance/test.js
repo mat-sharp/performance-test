@@ -6,9 +6,9 @@ const simpleRequestDuration = new Trend('simple_request_duration');
 
 export let options = {
     duration: "1m",
-    vus: 50,
+    vus: 100,
     thresholds: {
-        simple_request_duration: ["p(95)<100"]
+        simple_request_duration: ["p(95)<120"]
     }
 };
 
