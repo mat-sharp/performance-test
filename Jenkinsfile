@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker run loadimpact/k6 run - <test.js'
+                sh 'docker run -i loadimpact/k6 run - <test.js'
             }
         }
     }
