@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker run loadimpact/k6 run github.com/loadimpact/k6/samples/http_get.js'
+                sh 'docker run loadimpact/k6 run ./performance/test.js'
             }
         }
     }
