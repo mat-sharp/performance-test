@@ -8,7 +8,7 @@ export let options = {
     duration: "1m",
     vus: 50,
     thresholds: {
-        simple_request_duration: ["p(95)<120"]
+        simple_request_duration: ["p(95)<100"]
     }
 };
 
