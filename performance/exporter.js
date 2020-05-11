@@ -1,3 +1,3 @@
-import { simple_request_duration } from './export.json';
+const data = require('./export.json');
 
-console.log(simple_request_duration);
+console.log(data.metrics.simple_request_duration.avg);
