@@ -4,6 +4,7 @@ pipeline {
         stage('Performance test') {
             steps {
                 sh 'docker run -i loadimpact/k6 run - <./performance/test.js'
+                sh 'node exporter.js'
             }
         }
         stage('Functional test') {
