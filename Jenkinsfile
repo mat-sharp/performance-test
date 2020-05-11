@@ -1,16 +1,13 @@
 pipeline {
     agent any
     stages {
-        stage('Performance test') {
+        stage('Performance Testing') {
             steps {
-                sh 'docker run -i -v "$PWD":/performance -w /performance loadimpact/k6 run --summary-export=export.json - <./performance/test.js'
-                sh 'docker run -i --rm  -v "$PWD":/performance -w /performance node:slim node ./performance/exporter.js'
-                
-            }
-        }
-        stage('Functional test') {
-            steps {
-                sh 'docker run -i -v $PWD:/e2e -w /e2e cypress/included:3.4.0'
+                echo 'Running K6 performance tests...'
+                sh 'chmod +x setup_k6.sh'
+                sh './setup_k6.sh'
+                sh 'k6 run performance/test.js'
+                echo 'Completed Running K6 performance tests!'
             }
         }
     }
