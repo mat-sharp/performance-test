@@ -4,7 +4,8 @@ pipeline {
         stage('Performance test') {
             steps {
                 sh 'docker run -i loadimpact/k6 run - <./performance/test.js'
-                sh 'docker run -i -v "$PWD":/usr/src/app -w /usr/src/app node:latest node ./performance/exporter.js'
+                sh 'docker run -i -v "$PWD":/performance -w /performance node:latest node exporter.js'
+                
             }
         }
         stage('Functional test') {
